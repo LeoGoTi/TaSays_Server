@@ -34,7 +34,7 @@ public class LogLet extends HttpServlet {
         // 验证处理
         boolean loged = serv.login(account, password);
         if (loged) {
-            System.out.print("Succss");
+            System.out.println("Succss");
             confirm = "登陆成功";
             request.getSession().setAttribute("account", account);
             // response.sendRedirect("welcome.jsp");

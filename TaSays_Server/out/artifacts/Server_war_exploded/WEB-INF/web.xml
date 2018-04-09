@@ -18,6 +18,10 @@
         <servlet-name>EditInfoLet</servlet-name>
         <servlet-class>com.servlet.EditInfoLet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestLet</servlet-name>
+        <servlet-class>com.servlet.TestLet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>LogLet</servlet-name>
@@ -34,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>EditInfoLet</servlet-name>
         <url-pattern>/EditInfoLet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestLet</servlet-name>
+        <url-pattern>/TestLet</url-pattern>
     </servlet-mapping>
 
 

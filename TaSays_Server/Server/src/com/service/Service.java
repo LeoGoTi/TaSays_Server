@@ -31,11 +31,11 @@ public class Service {
         return false;
     }
 
-    public Boolean register(String account, String password) {
+    public Boolean register(String account, String password,String phonenum) {
 
         // 获取Sql查询语句
-        String regSql = "insert into users (account,password) values('"
-                + account + "','" + password + "') ";
+        String regSql = "insert into users (account,password,phonenum) values('"
+                + account + "','" + password + "','"+phonenum+"') ";
 
 
         // 获取DB对象

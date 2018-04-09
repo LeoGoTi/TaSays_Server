@@ -26,24 +26,24 @@ public class RegLet extends HttpServlet {
         Service serv = new Service();
 
         // 接收注册信息
-//		String account = request.getParameter("r_name");
         String account = request.getParameter("account");
         account = new String(account.getBytes("ISO-8859-1"), "UTF-8");
         String password = request.getParameter("password");
+        String phonenum=request.getParameter("phonenum");
         String confirm;
 //		String password = request.getParameter("r_password");
         System.out.println("test");
         // 验证处理
-        boolean reged = serv.register(account, password);
+        boolean reged = serv.register(account, password,phonenum);
         System.out.println("test" + reged);
         if (reged) {
             System.out.print("Succss");
-            confirm = "\n注册成功";
+            confirm = "注册成功";
             request.getSession().setAttribute("account", account);
             //response.sendRedirect("welcome.jsp");
         } else {
             System.out.print("Failed");
-            confirm = "\n注册失败，似乎您已注册";
+            confirm = "注册失败，该帐号已被注册";
         }
 
 
@@ -51,8 +51,8 @@ public class RegLet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.print("用户名：" + account);
-        out.print("密码：" + password);
+        //out.print("用户名：" + account);
+        //out.print("密码：" + password);
         out.print(confirm);
         out.flush();
         out.close();
